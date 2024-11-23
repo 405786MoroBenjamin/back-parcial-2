@@ -27,10 +27,10 @@ public class Flight {
     private Airport airport;
 
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
-    @JsonManagedReference  // Se maneja la serialización de los asientos desde el lado de Flight
+    @JsonManagedReference
     private List<Seat> seat_map;
 
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
-    @JsonBackReference  // Evita la serialización infinita desde Flight
+    @JsonBackReference
     private List<Reservation> reservations;
 }

@@ -20,10 +20,10 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "flight_id")
-    @JsonBackReference  // Evita la serialización infinita desde Reservation
+    @JsonBackReference
     private Flight flight;
 
     @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL)
-    @JsonManagedReference  // Maneja la serialización desde Passenger
+    @JsonManagedReference
     private List<Passenger> passengers;
 }

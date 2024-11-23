@@ -42,7 +42,6 @@ public class FlightService {
 
 
     private void validateFlight(Flight flight) {
-        // validar que la fecha sea x lo menos 6 hrs mas que la fecha actual
         // Todo: REvisar la validacion
 //        if (flight.getDeparture().isBefore(flight.getDeparture().plusHours(6))) {
 //            throw new IllegalArgumentException("La fecha de salida debe ser al menos 6 horas mayor a la fecha actual");
@@ -50,7 +49,6 @@ public class FlightService {
     }
 
     public Flight getFlightById(String id) {
-        List<Flight> flights = flightRepository.findAll();
         return flightRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("No se encontro el vuelo"));
     }
